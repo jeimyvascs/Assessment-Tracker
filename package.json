@@ -1,0 +1,14 @@
+{
+  "name": "my-electron-app",
+  "version": "1.0.0",
+  "description": "Assigment Tracker built with HTML CSS and JS",
+  "main": "main.js",
+  "scripts": {
+    "test": "dev"
+  },
+  "author": "Jeimy Vasquez",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^41.1.0"
+  }
+}
