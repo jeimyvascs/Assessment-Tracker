@@ -4,11 +4,17 @@
   "description": "Assigment Tracker built with HTML CSS and JS",
   "main": "main.js",
   "scripts": {
-    "test": "dev"
+    "start": "electron .",
+    "test": "dev",
+     "watch:css":"npx @tailwindcss/cli -i ./renderer/input.css -o ./renderer/output.css --watch"
   },
   "author": "Jeimy Vasquez",
   "license": "ISC",
   "devDependencies": {
     "electron": "^41.1.0"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.2.2",
+    "tailwindcss": "^4.2.2"
   }
 }
