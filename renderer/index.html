@@ -15,24 +15,40 @@
     <link href="./output.css" rel="stylesheet" />
   </head>
   <body class="bg-gray-50">
-    <h1 class="text-3xl font-bold p-4">Assessement Tracker</h1>
+    <div
+      class="flex items-center justify-between gap-4 p-4 border-b border-gray-300"
+    >
+      <h1 class="text-2xl font-bold">Tracker</h1>
+      <button
+        id="newBtn"
+        data-filter="all"
+        class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded font-semibold whitespace-nowrap"
+      >
+        + New
+      </button>
+    </div>
 
-    <nav class="bg-white border-b border-gray-200">
-      <ul class="flex gap-6 p-4">
-        <li class="text-gray-700">Home</li>
-        <li class="text-gray-700">Assignment</li>
-        <li class="text-gray-700">Assessement</li>
-        <li>
-          <button
-            id="newBtn"
-            class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded font-semibold"
-          >
-            + New
-          </button>
-        </li>
-      </ul>
-    </nav>
+    <div class="flex gap-2 px-4 py-2 border-b border-gray-200" id="filterTabs">
+      <button
+        data-filter="all"
+        class="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded font-semibold text-sm"
+      >
+        All
+      </button>
+      <button
+        data-filter="assessement"
+        class="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded font-semibold text-sm"
+      >
+        Assessements
+      </button>
 
+      <button
+        data-filter="assignment"
+        class="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded font-semibold text-sm"
+      >
+        Assignments
+      </button>
+    </div>
     <div
       class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
       id="formModal"
@@ -51,6 +67,7 @@
             id="name"
             class="w-full px-3 py-2 border border-gray-300 rounded"
             required
+            placeholder="e.g. Midterm exam"
           />
         </div>
         <div class="mb-4">
@@ -64,7 +81,7 @@
             required
           >
             <option value="assignment">Assignment</option>
-            <option value="assessements">Assessement</option>
+            <option value="assessement">Assessement</option>
           </select>
         </div>
 
@@ -78,7 +95,9 @@
             class="w-full px-3 py-2 border border-gray-300 rounded"
             required
           >
-            <option value="Object Oriented Programming">Object Oriented Programming</option>
+            <option value="Object Oriented Programming">
+              Object Oriented Programming
+            </option>
             <option value="Systems Programming">Systems Programming</option>
             <option value="GUI Programming">GUI Programming</option>
             <option value="Sociology">Sociology</option>
@@ -118,6 +137,7 @@
             type="text"
             class="w-full px-3 py-2 border border-gray-300 rounded"
             required
+            placeholder="Optional notes..."
           />
         </div>
 
@@ -134,25 +154,7 @@
     </div>
 
     <div class="p-4">
-      <h2 class="text-2xl font-bold mb-4">Summary</h2>
-
-      <div class="flex gap-4 mb-4">
-        <button
-          class="px-6 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded font-semibold"
-        >
-          Assessements
-        </button>
-
-        <button
-          class="px-6 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded font-semibold"
-        >
-          Assignments
-        </button>
-      </div>
-      <div id="display">
-
-      </div>
-    
+      <div id="display"></div>
     </div>
   </body>
   <script src="script.js"></script>
